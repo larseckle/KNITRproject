@@ -1,6 +1,5 @@
 # Reproducible Research: Peer Assessment 1
 
-
 ## Loading and preprocessing the data  
 
 ### Reading in the dataset and/or processing the data  
