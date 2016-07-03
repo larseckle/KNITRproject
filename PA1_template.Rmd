@@ -86,11 +86,12 @@ names(dtmeanInterval) <- c("Interval", "MeanSteps")
 dtImputedTotal <- merge( dtImputedTotal,dtmeanInterval,by="Interval")
 dtImputedTotal$Steps[is.na(dtImputedTotal$Steps)] <- dtImputedTotal$MeanSteps[is.na(dtImputedTotal$Steps)]
 dtImputedTotal[,MeanSteps:=NULL]
+```
  
- 
+Aggregate imputed data by Date.  
+```{r echo=TRUE}
 dtImputeaggregate <- aggregate(Steps~Date, data = dtImputedTotal,sum)
 head(dtImputeaggregate)
-
 ```
 
 ### Histogram of the total number of steps taken each day after missing values are imputed
